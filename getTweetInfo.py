@@ -65,7 +65,7 @@ class_name = "TextLabel__text-label___3oCVw TextLabel__black___2FN-Z TextLabel__
 
 
 result = []
-for i in range(len(stock_list_df)):
+for i in range(5):
     url="https://jp.reuters.com/companies/{0}.T/key-metrics" .format(stock_list_df.iloc[i,1])
     r = requests.get(url)
     time.sleep(0.5)
