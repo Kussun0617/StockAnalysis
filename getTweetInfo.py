@@ -68,7 +68,7 @@ result = []
 for i in range(10):
     url="https://jp.reuters.com/companies/{0}.T/key-metrics" .format(stock_list_df.iloc[i,1])
     r = requests.get(url)
-    time.sleep(0.5)
+    time.sleep(0.1)
     soup = BeautifulSoup(r.text, "html.parser")
     print(soup.title.text)
     company_all_info = soup.find_all("span",{"class":{class_name}})
