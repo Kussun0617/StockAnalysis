@@ -1,48 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
-import pandas as pd
 import numpy as np
 import datetime
 import time
+from stocklist import StockList
+from prtfolio import portfolio
 
-class List:
-    def __init__(self,file_name):
-        self.file_name = file_name
-
-class StockList(List):
-    def getDataFrame(self,df):
-        self.df = df
-        self.code_column_num = 1
-        self.name_column_num = 2
-        self.sector_column_num = 4
-        self.stock_column_num = 6
-
-class Portfolio(List):
-    values = []
-
-    def setColumns(self):
-        self.columns = [
-        "code",
-        "name",
-        "sector",
-        "shocks",
-        "stock price",
-        "asset per company",
-        "dividend yield",
-        "PER",
-        "PBR",
-        "sales",
-        "operation income",
-        "operation margin",
-        "current ratio",
-        "dividend",
-        "payout ratio"
-        ]
-
-    def setDataFrame(self):
-        self.df = pd.DataFrame(self.values, columns = self.columns)
-        date_info = datetime.date.today().strftime("%Y%m%d")
-        self.file_name = "{}_portfolio.csv".format(date_info)
 
     # def setFromStockList(self, code, name, sector, stock):
     #     self.code = code
